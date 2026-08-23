@@ -1,15 +1,536 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Little Surprise For You 🤍</title><style>*{box-sizing:border-box}body{margin:0;font-family:Georgia,serif;background:#fff7fa;color:#4a2634}section{min-height:100vh;padding:45px 18px;display:flex;align-items:center;justify-content:center}.card{max-width:760px;width:100%;text-align:center;background:#ffffffe8;border:1px solid #f2d7e1;border-radius:28px;padding:35px 22px;box-shadow:0 15px 50px #5f28451f}h1{font-size:clamp(2.1rem,8vw,4.2rem);font-weight:500}h2{font-size:clamp(1.8rem,6vw,3rem);font-weight:500}p{font-size:1.08rem;line-height:1.8}.small{font:12px Arial,sans-serif;letter-spacing:2px;opacity:.65}button{border:0;border-radius:999px;padding:14px 28px;margin:8px;font-size:1rem;cursor:pointer}.yes{background:#9b4d69;color:#fff}.no{background:#fff;border:1px solid #d9aebe;color:#7c4056;position:relative}.envelope{font-size:5rem;cursor:pointer;animation:float 2s ease-in-out infinite}.hidden{display:none}.letter{text-align:left;white-space:pre-line;background:#fffafc;border:1px solid #f0d6df;border-radius:20px;padding:24px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}.reason{padding:22px;border-radius:20px;background:#fff;border:1px solid #f1d9e2;cursor:pointer;min-height:115px;display:flex;align-items:center;justify-content:center}.reason span{display:none}.reason.open span{display:block}.reason.open strong{display:none}.memories,.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.memory{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #efd7df}.memory img,.gallery img{width:100%;height:230px;object-fit:cover;background:#f7e9ee}.memory div{padding:14px}.heart{position:fixed;pointer-events:none;animation:rise 5s linear forwards;z-index:20}@keyframes rise{to{transform:translateY(-110vh);opacity:0}}audio{width:100%;margin-top:18px}@media(max-width:520px){.gallery img{height:280px}}</style></head><body>
-<section id="opening"><div class="card"><div class="small">A LITTLE SURPRISE FOR YOU</div><h1>A little surprise for the person who means the world to me… 🤍</h1><p>Are you ready?</p><button class="yes" onclick="start()">YES 🤍</button><button class="no" id="no">NO 🙈</button><p class="small">P.S. You really don't have a choice 😭😂</p></div></section>
-<div id="site" style="display:none">
-<section><div class="card"><div class="small">JUST FOR YOU</div><h2>Some names that belong to you… 🥹</h2><div class="grid"><div class="reason"><strong>My Love 🤍</strong><span>because you are my favourite person.</span></div><div class="reason"><strong>My Hubby 🫂</strong><span>my home, my comfort, my person.</span></div><div class="reason"><strong>My Person 🌍</strong><span>the one my heart keeps choosing.</span></div><div class="reason"><strong>My Favourite Human 🥺</strong><span>because no one feels quite like you.</span></div></div><p class="small">Tap each one ✨</p></div></section>
-<section><div class="card"><div class="small">A LETTER FOR YOU</div><h2>Open this when you're ready 💌</h2><div class="envelope" onclick="openLetter()">💌</div><div id="letter" class="letter hidden"><strong>Happy Birthday, My Love 🤍</strong><p><!-- EDIT YOUR LETTER BELOW -->Write your birthday letter here…
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Askim 🤍</title>
 
-You can replace this whole paragraph with your own message. 🥹🫂
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Georgia,serif;
+background:#140c14;
+color:#fff;
+text-align:center;
+overflow-x:hidden;
+}
+section{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:30px 20px;
+}
+.screen{max-width:700px;width:100%}
+h1{font-size:clamp(2rem,8vw,4rem);font-weight:400}
+h2{font-size:2rem;font-weight:400}
+p{font-size:1.05rem;line-height:1.8}
+button{
+border:0;
+padding:14px 28px;
+margin:8px;
+border-radius:30px;
+font-size:17px;
+cursor:pointer;
+}
+.yes{background:#e98baa;color:white}
+.no{background:white;color:#8d4760;position:relative}
+.hidden{display:none!important}
 
-With all my love,
-Your girl 🤍</p></div></div></section>
-<section><div class="card"><div class="small">THINGS I LOVE ABOUT YOU</div><h2>There are so many… 🤍</h2><div class="grid"><div class="reason"><strong>01</strong><span>Replace this with your reason.</span></div><div class="reason"><strong>02</strong><span>Replace this with your reason.</span></div><div class="reason"><strong>03</strong><span>Replace this with your reason.</span></div><div class="reason"><strong>04</strong><span>Replace this with your reason.</span></div><div class="reason"><strong>05</strong><span>Replace this with your reason.</span></div><div class="reason"><strong>06</strong><span>Replace this with your reason.</span></div></div><p class="small">Tap each card 🤍</p></div></section>
-<section><div class="card"><div class="small">OUR LITTLE STORY</div><h2>Our memories 🫂</h2><div class="memories"><div class="memory"><img src="images/memory1.jpg"><div><strong>Our first memory</strong><p class="small">Write your caption here.</p></div></div><div class="memory"><img src="images/memory2.jpg"><div><strong>A moment I'll never forget</strong><p class="small">Write your caption here.</p></div></div><div class="memory"><img src="images/memory3.jpg"><div><strong>One of my favourite days</strong><p class="small">Write your caption here.</p></div></div></div></div></section>
-<section><div class="card"><div class="small">AND THEN THERE WAS US…</div><h2>My favourite memories are the ones with you. 🤍</h2><div class="gallery"><img src="images/photo1.jpg"><img src="images/photo2.jpg"><img src="images/photo3.jpg"><img src="images/photo4.jpg"><img src="images/photo5.jpg"><img src="images/photo6.jpg"></div></div></section>
-<section><div class="card"><div class="small">ONE LAST THING…</div><h1>Happy Birthday,<br>My Love. 🤍</h1><p>May this year bring you every happiness your heart deserves.</p><p><em>If I had to choose again, I'd still choose you.</em> 🫂🌍</p><audio controls loop><source src="music/song.mp3" type="audio/mpeg"></audio><p class="small">Replace song.mp3 with your own song file.</p><div style="font-size:2rem">🎂 ✨ 🤍 🫂 🎆</div></div></section></div>
-<script>const n=document.getElementById('no');function move(){n.style.transform=`translate(${Math.random()*240-120}px,${Math.random()*180-90}px)`}n.addEventListener('mouseenter',move);n.addEventListener('touchstart',e=>{e.preventDefault();move()},{passive:false});function start(){document.getElementById('opening').style.display='none';document.getElementById('site').style.display='block';hearts()}function openLetter(){document.getElementById('letter').classList.remove('hidden');document.querySelector('.envelope').style.display='none'}document.querySelectorAll('.reason').forEach(x=>x.onclick=()=>x.classList.toggle('open'));function hearts(){setInterval(()=>{let h=document.createElement('div');h.className='heart';h.textContent=['🤍','❤️','💗','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.bottom='-30px';h.style.fontSize=16+Math.random()*20+'px';document.body.appendChild(h);setTimeout(()=>h.remove(),5000)},700)}</script></body></html>
+/* opening */
+#opening{background:radial-gradient(circle,#4b263b,#140c14)}
+.glow{animation:glow 2s infinite alternate}
+@keyframes glow{
+from{text-shadow:0 0 5px #fff}
+to{text-shadow:0 0 25px #ff9fbd}
+}
+
+/* balloons */
+.balloon{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+width:75px;height:100px;
+border-radius:50% 50% 45% 45%;
+background:#ed789d;
+margin:12px;
+cursor:pointer;
+font-size:0;
+box-shadow:0 10px 25px #0005;
+transition:.25s;
+}
+.balloon:nth-child(2){background:#c989df}
+.balloon:nth-child(3){background:#78badb}
+.balloon:nth-child(4){background:#f4a76c}
+.balloon:nth-child(5){background:#e889b4}
+.balloon.pop{
+transform:scale(1.5);
+opacity:0;
+pointer-events:none;
+}
+
+/* cake */
+.cake{font-size:100px}
+.candle{
+font-size:45px;
+display:inline-block;
+cursor:pointer;
+animation:flicker .7s infinite alternate;
+}
+@keyframes flicker{
+from{transform:scale(1)}
+to{transform:scale(1.08)}
+}
+
+/* flower */
+.flower{
+font-size:90px;
+animation:bloom 2s ease forwards;
+}
+@keyframes bloom{
+0%{transform:scale(0)}
+100%{transform:scale(1)}
+}
+
+/* letter */
+.envelope{
+font-size:100px;
+cursor:pointer;
+animation:float 2s infinite ease-in-out;
+}
+@keyframes float{
+50%{transform:translateY(-12px)}
+}
+.letter{
+background:#fff8ef;
+color:#51343d;
+padding:28px;
+border-radius:10px;
+text-align:left;
+line-height:1.8;
+box-shadow:0 15px 50px #0007;
+white-space:pre-line;
+}
+
+/* reasons */
+.reason{
+background:#fff1f6;
+color:#633746;
+padding:22px;
+margin:12px 0;
+border-radius:18px;
+cursor:pointer;
+}
+.reason span{display:none}
+.reason.open span{display:block}
+.reason.open strong{display:none}
+
+/* final */
+.final-photo{
+width:280px;
+height:350px;
+object-fit:cover;
+border-radius:18px;
+box-shadow:0 0 40px #ff8eb566;
+background:#3b2430;
+}
+#final{
+background:radial-gradient(circle,#57263e,#120a12);
+}
+
+.heart{
+position:fixed;
+bottom:-30px;
+animation:rise 5s linear forwards;
+pointer-events:none;
+}
+@keyframes rise{
+to{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 1 OPENING -->
+<section id="opening">
+<div class="screen">
+<p>✨ A LITTLE SURPRISE FOR YOU ✨</p>
+<h1 class="glow">
+A little surprise for the person who means the world to me… 🤍
+</h1>
+<h2>Are you ready?</h2>
+
+<button class="yes" onclick="next('opening','balloons')">
+YES 🤍
+</button>
+
+<button class="no" id="no">
+NO 🙈
+</button>
+
+<p>you really don't have a choice 😭😂</p>
+</div>
+</section>
+
+
+<!-- 2 BALLOONS -->
+<section id="balloons" class="hidden">
+<div class="screen">
+<p>🎈 A LITTLE SOMETHING FOR YOU 🎈</p>
+<h2>Pop the balloons…</h2>
+<p>There might be something waiting inside each one. 🤍</p>
+
+<div id="balloonBox">
+<div class="balloon">1</div>
+<div class="balloon">2</div>
+<div class="balloon">3</div>
+<div class="balloon">4</div>
+<div class="balloon">5</div>
+</div>
+
+<p id="balloonMsg"></p>
+
+<button id="balloonNext" class="yes hidden"
+onclick="next('balloons','cake')">
+Continue ✨
+</button>
+</div>
+</section>
+
+
+<!-- 3 CAKE -->
+<section id="cake" class="hidden">
+<div class="screen">
+<p>🎂 YOUR SPECIAL DAY 🎂</p>
+
+<h2>Blow the candles & make a wish…</h2>
+
+<div class="cake">🎂</div>
+
+<div id="candles">
+<span class="candle">🕯️</span>
+<span class="candle">🕯️</span>
+<span class="candle">🕯️</span>
+</div>
+
+<p id="blowText">
+Tap the candles to blow them out 🤍
+</p>
+
+<button id="cakeNext" class="yes hidden"
+onclick="next('cake','flower')">
+Make a wish ✨
+</button>
+</div>
+</section>
+
+
+<!-- 4 FLOWER -->
+<section id="flower" class="hidden">
+<div class="screen">
+<h2>This is for you… 🌸</h2>
+
+<div class="flower">🌷</div>
+
+<p>
+Because you deserve beautiful things,<br>
+soft moments, endless happiness<br>
+and all the love in the world. 🤍
+</p>
+
+<button class="yes"
+onclick="next('flower','letter')">
+There's something else… 💌
+</button>
+</div>
+</section>
+
+
+<!-- 5 LETTER -->
+<section id="letter" class="hidden">
+<div class="screen">
+
+<p>💌 A LETTER FOR YOU</p>
+<h2>Open it when you're ready…</h2>
+
+<div id="envelope" class="envelope" onclick="openLetter()">
+💌
+</div>
+
+<div id="letterText" class="letter hidden">
+
+Sometimes I genuinely wonder how can someone become this much of an obsession?🥺
+
+Whenever we met I never want to leave. My heart just wants to stay there a little longer looking into your eyes, touching your face, running my fingers through your hair, just watching you exist so close to me😭🫂
+
+I could sit beside you for hours with nothing special happening. I don’t know when your presence became something my heart started craving this much🤌🏻🥹🫂🌍
+
+Maybe that’s what loving you feels like for me — never quite feeling like I’ve had enough of you🤍
+
+Even now you are my husband, completely mine, but I want you moreeeeeee😭🫀
+
+And on your birthday, I just want you to know:
+
+I don’t only love you. I’m completely, hopelessly obsessed with the little world that is you, Askim. 🫂❤️🌍
+
+</div>
+
+<button id="letterNext" class="yes hidden"
+onclick="next('letter','reasons')">
+There's more… 🤍
+</button>
+
+</div>
+</section>
+
+
+<!-- 6 REASONS -->
+<section id="reasons" class="hidden">
+<div class="screen">
+
+<p>🤍 THINGS I LOVE ABOUT YOU 🤍</p>
+<h2>Tap each one…</h2>
+
+<div class="reason">
+<strong>01 ✨</strong>
+<span>The way your presence makes everything feel better.</span>
+</div>
+
+<div class="reason">
+<strong>02 🫂</strong>
+<span>The way I can sit beside you and still never feel like I've had enough of you.</span>
+</div>
+
+<div class="reason">
+<strong>03 🥹</strong>
+<span>Your eyes… I could honestly get lost in them forever.</span>
+</div>
+
+<div class="reason">
+<strong>04 ❤️</strong>
+<span>The little things you do that make me feel loved without even trying.</span>
+</div>
+
+<div class="reason">
+<strong>05 🌍</strong>
+<span>The comfort of knowing that somehow, you're my person.</span>
+</div>
+
+<div class="reason">
+<strong>06 🤍</strong>
+<span>Simply because you're YOU. And that's more than enough for me.</span>
+</div>
+
+<button class="yes" onclick="next('reasons','memory')">
+Our memories 🫂
+</button>
+
+</div>
+</section>
+
+
+<!-- 7 MEMORY -->
+<section id="memory" class="hidden">
+<div class="screen">
+
+<p>🫂 OUR LITTLE STORY</p>
+
+<h2>Our memories…</h2>
+
+<div style="font-size:80px">💞</div>
+
+<p>
+Seven years of us.<br>
+So many moments, so many memories,<br>
+and somehow I still want a lifetime more.
+</p>
+
+<p>
+From the beginning until now…<br>
+and from now until forever. 🤍
+</p>
+
+<button class="yes" onclick="next('memory','final')">
+One last surprise 🎁
+</button>
+
+</div>
+</section>
+
+
+<!-- 8 FINAL -->
+<section id="final" class="hidden">
+<div class="screen">
+
+<p>✨ AND THEN THERE WAS US… ✨</p>
+
+<!-- PUT YOUR PHOTO HERE -->
+<img
+src="YOUR-PHOTO-HERE.jpg"
+class="final-photo"
+alt="Our photo"
+>
+
+<h1 class="glow">
+Happy Birthday Askim ❤️
+</h1>
+
+<p>
+My favourite person.<br>
+My husband.<br>
+My home. 🫂🌍
+</p>
+
+<p>
+I hope this birthday reminds you<br>
+just how deeply, completely and endlessly<br>
+you are loved. 🤍
+</p>
+
+<div style="font-size:40px">
+🎆 ✨ ❤️ ✨ 🎆
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+/* NO BUTTON */
+const no=document.getElementById("no");
+
+function moveNo(){
+let x=Math.random()*220-110;
+let y=Math.random()*180-90;
+no.style.transform=`translate(${x}px,${y}px)`;
+}
+
+no.addEventListener("mouseover",moveNo);
+no.addEventListener("touchstart",function(e){
+e.preventDefault();
+moveNo();
+});
+
+
+/* NEXT SCREEN */
+function next(old,newScreen){
+
+document.getElementById(old).classList.add("hidden");
+document.getElementById(newScreen).classList.remove("hidden");
+
+window.scrollTo(0,0);
+
+hearts();
+}
+
+
+/* BALLOONS */
+let popped=0;
+
+document.querySelectorAll(".balloon").forEach((b,index)=>{
+
+b.onclick=function(){
+
+if(b.classList.contains("pop")) return;
+
+b.classList.add("pop");
+popped++;
+
+const messages=[
+"You are my favourite person. 🤍",
+"I love the little world that is you. 🌍",
+"You make my heart feel at home. 🫂",
+"I still want you more every day. 🥹",
+"Seven years and I'd choose you all over again. ❤️"
+];
+
+document.getElementById("balloonMsg").innerText=messages[index];
+
+if(popped===5){
+document.getElementById("balloonNext").classList.remove("hidden");
+}
+
+};
+});
+
+
+/* CANDLES */
+let candles=3;
+
+document.querySelectorAll(".candle").forEach(c=>{
+
+c.onclick=function(){
+
+if(c.innerText==="✨") return;
+
+c.innerText="✨";
+candles--;
+
+if(candles===0){
+
+document.getElementById("blowText").innerText=
+"Wish made? 🤍✨";
+
+document.getElementById("cakeNext").classList.remove("hidden");
+
+}
+
+};
+});
+
+
+/* LETTER */
+function openLetter(){
+
+document.getElementById("envelope").classList.add("hidden");
+
+document.getElementById("letterText").classList.remove("hidden");
+
+document.getElementById("letterNext").classList.remove("hidden");
+
+}
+
+
+/* REASONS */
+document.querySelectorAll(".reason").forEach(r=>{
+
+r.onclick=function(){
+r.classList.toggle("open");
+};
+
+});
+
+
+/* FLOATING HEARTS */
+function hearts(){
+
+for(let i=0;i<8;i++){
+
+setTimeout(()=>{
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerText=["🤍","❤️","💗","✨"][Math.floor(Math.random()*4)];
+
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(15+Math.random()*20)+"px";
+
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),5000);
+
+},i*250);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
